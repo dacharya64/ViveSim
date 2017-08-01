@@ -40,7 +40,7 @@ public class CSVReader : MonoBehaviour
             }
             textOutput += "\n";
         }
-        Debug.Log(textOutput);
+        //Debug.Log(textOutput);
     }
 
     // splits a CSV file into a 2D string array

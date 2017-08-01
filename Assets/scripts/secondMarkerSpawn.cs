@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class markerSpawn : MonoBehaviour {
+public class secondMarkerSpawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        this.transform.position = ParseCSV.secondMarkerPosition;
+    }
 }
