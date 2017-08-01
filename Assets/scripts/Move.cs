@@ -5,24 +5,16 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     const float MOVE_AMOUNT = 10.0f;
-    float currentTime;
-    const string outputFile = "Place.txt";
-    public GameObject eyes;
+    
     // Use this for initialization
     void Start()
     {
-        currentTime = Time.time;
+       
     }
 
     // Write the position and rotation of the object it is attached to  (camera rig)
     void Update()
     {
-	// Write the position and rotation 5 times per second
-        /*if (Time.time - currentTime > 0.2f)
-        {
-            System.IO.File.AppendAllText(outputFile, "Time:" + Time.time + " Eyes position:" + eyes.GetComponent<Transform>().position + " Camera rig position:" + GetComponent<Transform>().position + " Eyes rotation:" + eyes.GetComponent<Transform>().eulerAngles.ToString() + "\r\n");
-            currentTime = Time.time;
-        }*/
     }
 
     // Fixed Update is different from regular update. It runs before update
@@ -58,17 +50,17 @@ public class Move : MonoBehaviour
         {
             GetComponent<Transform>().RotateAround(GetComponent<Transform>().transform.position, Vector3.up, MOVE_AMOUNT);
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Q))
         {
             GetComponent<Transform>().Translate(Vector3.up / 10);
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.E))
         {
             GetComponent<Transform>().Translate(Vector3.down / 10);
         }
         if (Input.GetKey(KeyCode.R))
         {
-            GetComponent<Transform>().eulerAngles = new Vector3(0, GetComponent<Transform>().eulerAngles.y, 0);
+            GetComponent<Transform>().Rotate(new Vector3(0, 10, 0), Space.Self);
         }
     }
 }

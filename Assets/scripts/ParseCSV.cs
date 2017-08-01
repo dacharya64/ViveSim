@@ -14,6 +14,11 @@ public class ParseCSV : MonoBehaviour {
     public static Vector3 secondMarkerPosition;
     public static Vector3 responsePosition;
 
+    public static bool isLandmark;
+
+    public static String participantNumber;
+    public static String navNumber;
+
 
     // Use this for initialization
     void Start () {
@@ -30,9 +35,14 @@ public class ParseCSV : MonoBehaviour {
             getFirstMarkerPosition();
             getSecondMarkerPosition();
             getResponsePosition();
+            getLandmark();
+            getParticipantNumber();
+            getNavNumber();
             count++;
         }
     }
+
+
 
     private void getStartMarkerPosition()
     {
@@ -50,5 +60,25 @@ public class ParseCSV : MonoBehaviour {
     private void getResponsePosition()
     {
         responsePosition = new Vector3(float.Parse(data[9, count]), 0, float.Parse(data[10, count]));
+    }
+    private void getLandmark()
+    {
+        if (data[16, count].Equals("L"))
+        {
+            isLandmark = true;
+        }
+        else {
+            isLandmark = false; 
+        }
+    }
+
+    private void getParticipantNumber()
+    {
+        participantNumber = data[0, count];
+    }
+
+    private void getNavNumber()
+    {
+        navNumber = data[18, count];
     }
 }
