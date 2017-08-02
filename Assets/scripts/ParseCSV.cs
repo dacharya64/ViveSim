@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * takes the CSV of data and uses commands from CSVReader to split the data into arrays per row (trial)
+ * then extracts the data out and saves them as variables
+ * that can be called from other scripts
+ */ 
+
 public class ParseCSV : MonoBehaviour { 
     public TextAsset csv; //csv you're reading from, do not change 
     string[,] data; //a 2d string array of all of the data from the csv
@@ -23,7 +29,9 @@ public class ParseCSV : MonoBehaviour {
     // Use this for initialization
     void Start () {
         count = 1; //set it so it skips the descriptor row on initialization
-        data = CSVReader.SplitCsvGrid(csv.text);   
+        data = CSVReader.SplitCsvGrid(csv.text);
+        participantNumber = "0";
+        navNumber = "0";
     }
 
     // Update is called once per frame

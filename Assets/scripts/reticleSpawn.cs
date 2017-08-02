@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * Places answer reticle indicator the position in each trial that the CSV gives it 
+ */
+
 public class reticleSpawn : MonoBehaviour {
 
 	// Use this for initialization

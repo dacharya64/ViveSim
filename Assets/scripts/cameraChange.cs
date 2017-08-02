@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Handles changing the camera between orthographic and perspective view
+ * by pressing 1 or 2, respectively
+ */ 
+
 public class cameraChange : MonoBehaviour {
     public Camera orth;
     public Camera persp;
@@ -17,13 +22,11 @@ public class cameraChange : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             orth.enabled = true;
             persp.enabled = false;
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        { 
             orth.enabled = false;
             persp.enabled = true;
         }

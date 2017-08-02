@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class secondMarkerSpawn : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+/*
+ * Places second marker at the position in each trial that the CSV gives it 
+ */
+
+    // Use this for initialization
+    void Start () {
         
 
     }

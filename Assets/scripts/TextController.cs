@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class TextController : MonoBehaviour {
 
-    //GameObject myTextgameObject;
+    /*changes the UI text based on the data in the CSV file*/
+
     public Text participantText; // assign it from inspector
     public Text navText;
     
@@ -19,7 +20,7 @@ public class TextController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         participantText.text = "Participant: " + ParseCSV.participantNumber;
-
+        //depending on nav interface, update text
         if (ParseCSV.navNumber.Equals("0"))
         {
             navText.text = "Nav Interface: Concordant";

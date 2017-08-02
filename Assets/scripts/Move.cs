@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Deals with moving the camera on the perspective camera view
+ * based on keypress
+ * WASD to move forward / back, Q and E to move up/down, and R / arrow keys to rotate
+ */
+
 public class Move : MonoBehaviour
 {
     const float MOVE_AMOUNT = 10.0f;
